@@ -8,10 +8,14 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
+	string textDisplay = "SANTA";
+
 	// Update is called once per frame
 	void Update () {
-		
+
+		string textBuffer = textDisplay;
+
 		// move forward if I press W
 		if ( Input.GetKey (KeyCode.W) ) {
 			//Time.deltaTime is the fraction of a second in between a frame
@@ -49,7 +53,13 @@ public class PlayerMovement : MonoBehaviour {
 		//}
 
 		// write text if I get close to treasure
+		if ( textDisplay == "SANTA") {
+			textBuffer += "\nA gaudy, dark dressing room in a well-respected theatre. You'll have to look hard if you hope to find anything in all the clutter.";
+			textBuffer += "\n\nPress [X] to examine the dressing room.";
+		}
 		//
+
+		GetComponent<Text>().text = textBuffer;
 		
 	}
 }
