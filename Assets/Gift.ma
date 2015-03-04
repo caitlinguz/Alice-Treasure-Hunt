@@ -1,6 +1,6 @@
 //Maya ASCII 2015 scene
 //Name: Gift.ma
-//Last modified: Tue, Feb 17, 2015 02:47:01 PM
+//Last modified: Wed, Feb 18, 2015 12:36:40 PM
 //Codeset: UTF-8
 requires maya "2015";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOptions" -nodeType "mentalrayGlobals"
@@ -14,12 +14,12 @@ fileInfo "osv" "Mac OS X 10.9.2";
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 4.4076203125306135 21.119139741763085 21.668593655977183 ;
-	setAttr ".r" -type "double3" -40.538352729661788 18.199999999989714 -1.6740253970412689e-15 ;
+	setAttr ".t" -type "double3" -9.9464691557205498 29.554405766500224 29.037211661701399 ;
+	setAttr ".r" -type "double3" -42.93835272966286 -15.400000000010607 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999986;
-	setAttr ".coi" 28.252534369839118;
+	setAttr ".coi" 39.339049382924898;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -342,7 +342,7 @@ createNode mesh -n "pCube2Shape" -p "transform14";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pTorus1";
 	setAttr ".t" -type "double3" 0.36547066929108962 7.7092121174969339 1.4348135937790139 ;
-	setAttr ".r" -type "double3" 102.5083122066753 56.894313759737322 139.38405320742919 ;
+	setAttr ".r" -type "double3" 102.5083122066753 56.894313759737329 139.38405320742919 ;
 	setAttr ".s" -type "double3" 0.57724289821032326 1 0.79629940098817253 ;
 createNode transform -n "transform13" -p "pTorus1";
 	setAttr ".v" no;
@@ -359,12 +359,12 @@ createNode mesh -n "pTorusShape1" -p "transform13";
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "group10";
 	setAttr ".t" -type "double3" -2.7628163163677741 -0.32284077254506194 -0.95082956277747965 ;
-	setAttr ".r" -type "double3" 32.305854659831724 -19.128420028475169 -75.678321857303885 ;
+	setAttr ".r" -type "double3" 32.305854659831724 -19.128420028475173 -75.678321857303885 ;
 	setAttr ".rp" -type "double3" 0.65426891287961508 7.9595964735075668 0.36243770545283838 ;
 	setAttr ".sp" -type "double3" 0.65426891287961508 7.9595964735075668 0.36243770545283838 ;
 createNode transform -n "pasted__pTorus1" -p "group10";
 	setAttr ".t" -type "double3" 0.98434570937178234 8.3555717445720674 1.48014642165225 ;
-	setAttr ".r" -type "double3" 93.910939543432335 48.745000454621909 129.39176663323366 ;
+	setAttr ".r" -type "double3" 93.910939543432349 48.745000454621909 129.39176663323366 ;
 	setAttr ".s" -type "double3" 0.55209059460891252 0.76160211089872598 0.76160211089872598 ;
 createNode transform -n "transform12" -p "pasted__pTorus1";
 	setAttr ".v" no;
@@ -831,8 +831,6 @@ select -ne :hardwareRenderingGlobals;
 		 0 0 0 0 ;
 select -ne :defaultHardwareRenderGlobals;
 	setAttr ".res" -type "string" "ntsc_4d 646 485 1.333";
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId1.id" "pCubeShape1.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "pCubeShape1.iog.og[0].gco";
 connectAttr "groupParts1.og" "pCubeShape1.i";
